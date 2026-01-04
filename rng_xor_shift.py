@@ -5,7 +5,7 @@ Implements a configurable XORShift32 generator.
 Fast, lightweight, and deterministic.
 """
 
-class XORShiftRNG:
+class XORShift:
     def __init__(self, seed: int, *, q: int = 13, r: int = 17, s: int = 5):
 
         if seed == 0:
@@ -64,7 +64,7 @@ class XORShiftRNG:
 
 # Example usage
 if __name__ == "__main__":
-    rng = XORShiftRNG(seed=123456, q=13, r=17, s=5)
+    rng = XORShift(seed=123456, q=13, r=17, s=5)
 
     print("Raw random integers:")
     for _ in range(5):
@@ -78,3 +78,4 @@ if __name__ == "__main__":
     print("\nRandom integers between 10 and 20:")
     for _ in range(5):
         print(rng.randint(10, 20))
+
